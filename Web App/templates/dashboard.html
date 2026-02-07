@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark">
+
+<h2 class="top">Welcome {{ name }}</h2>
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<div class="center">
+    <form method="post" action="/launch" class="card">
+        <select name="instance_type" required>
+            <option disabled selected>Choose Instance Type</option>
+            {% for t in instance_types %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="subnet_id" required>
+            <option disabled selected>Choose Subnet</option>
+            {% for s, sid in subnets.items() %}
+            <option value="{{ sid }}">{{ s }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">🚀 Launch Instance</button>
+    </form>
+</div>
+
+{% for i in instances %}
+<div class="instance">
+    <p><b>Instance ID:</b> {{ i.id }}</p>
+    <p><b>Type:</b> {{ i.type }}</p>
+    <p><b>Subnet:</b> {{ i.subnet_name }}</p>
+    <p><b>Private IP:</b> {{ i.private_ip }}</p>
+
+    <a class="delete" href="/delete/{{ i.id }}">Delete Instance</a>
+</div>
+{% endfor %}
+
+</body>
+</html>
