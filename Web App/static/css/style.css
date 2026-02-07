@@ -1,1 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, Arial;
+}
 
+body.dark {
+    min-height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at top, #6d3df2, #0b0b17 45%);
+    color: #fff;
+}
+
+/* ---------- Center Utilities ---------- */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* ---------- Card ---------- */
+.card {
+    background: rgba(20, 20, 35, 0.95);
+    width: 360px;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(155, 89, 255, 0.35);
+}
+
+/* ---------- Inputs ---------- */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 14px;
+    border-radius: 10px;
+    border: 1px solid #2e2e55;
+    background: #151528;
+    color: #fff;
+}
+
+select option {
+    background: #151528;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    margin-top: 22px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7f5cff, #b084ff);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ---------- Top Title ---------- */
+.top {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+/* ---------- Instance Cards ---------- */
+.instance {
+    background: rgba(20, 20, 35, 0.95);
+    width: 380px;
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(155, 89, 255, 0.2);
+}
+
+/* ---------- Delete Button ---------- */
+.delete {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ---------- Error ---------- */
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: 15px;
+}
